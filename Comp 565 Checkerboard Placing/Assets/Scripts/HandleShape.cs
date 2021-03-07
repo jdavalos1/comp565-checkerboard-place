@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class HandleShape : MonoBehaviour
 {
     GameObject transparent;
-    Vector3 basePosition;
     Vector3 hiddenPosition;
     
     
@@ -18,12 +17,11 @@ public class HandleShape : MonoBehaviour
     void Start()
     {
         // Create base and hidden positions
-        basePosition = new Vector3(0, 0.55f, 0);
         hiddenPosition = new Vector3(0, -100, 0);
 
         // Set current positions
         transparent = cubeTransparent;
-        transparent.transform.position = basePosition;
+        transparent.transform.position = new Vector3(0, 0.55f, 0);
 
         // Set other transparent trackers as inactive
         sphereTransparent.SetActive(false);
@@ -37,10 +35,16 @@ public class HandleShape : MonoBehaviour
 
     private void Swapper(GameObject go)
     {
+        // Obtain last position of the transparent
+        var lastPos = transparent.transform.position;
+        
+        // Deactivate and hide the last shape
         transparent.SetActive(false);
         transparent.transform.position = hiddenPosition;
+        
+        // New transparent set w/last pos
         transparent = go;
         transparent.SetActive(true);
-        transparent.transform.position = basePosition;
+        transparent.transform.position = lastPos;
     }
  }
