@@ -12,10 +12,8 @@ public class UserShapeControl : MonoBehaviour
 
             if (hit)
             {
-                if (hitInfo.transform.CompareTag("UserShape"))
-                {
+                if(hitInfo.collider.transform == this.transform)
                     StartCoroutine(gameObject.GetComponent<Explosion>().SplitMesh(true));
-                }
             }
         }
     }
