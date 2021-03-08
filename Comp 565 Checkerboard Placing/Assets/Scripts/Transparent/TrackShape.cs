@@ -12,7 +12,7 @@ public class TrackShape : MonoBehaviour
     void Start()
     {
         goRenderer = gameObject.GetComponent<Renderer>();
-        goRenderer.material.color = Color.yellow;
+        goRenderer.material.color = tranparentYellow;
     }
 
     // Update is called once per frame
@@ -26,11 +26,13 @@ public class TrackShape : MonoBehaviour
             {
                 if (hitInfo.transform.CompareTag("Base"))
                 {
+                    // Use the position of the ray to and change the color
                     gameObject.transform.position = new Vector3(hitInfo.point.x, hitInfo.point.y + (0.5f), hitInfo.point.z);
                     goRenderer.material.color = tranparentYellow;
                 }
                 else
                 {
+                    // Change color before we move shape anywhere
                     goRenderer.material.color = tranparentGreen;
                     if (hitInfo.normal == new Vector3(0, 0, 1)) // z+
                     {

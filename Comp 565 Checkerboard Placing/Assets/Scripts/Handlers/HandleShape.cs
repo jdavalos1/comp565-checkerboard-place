@@ -2,16 +2,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+// Handle the current controlled shape by activating and hiding
 public class HandleShape : MonoBehaviour
 {
     GameObject transparent;
     Vector3 hiddenPosition;
     
-    
-    public GameObject cubeTransparent;
-    public GameObject sphereTransparent;
-    public GameObject capsuleTransparent;
-
+    public List<GameObject> gos;
     public List<Button> buttons;
 
     void Start()
@@ -20,17 +17,17 @@ public class HandleShape : MonoBehaviour
         hiddenPosition = new Vector3(0, -100, 0);
 
         // Set current positions
-        transparent = cubeTransparent;
+        transparent = gos[0];
         transparent.transform.position = new Vector3(0, 0.55f, 0);
 
         // Set other transparent trackers as inactive
-        sphereTransparent.SetActive(false);
-        capsuleTransparent.SetActive(false);
+        gos[1].SetActive(false);
+        gos[2].SetActive(false);
 
         // Set listeners when swap buttons detected
-        buttons[0].onClick.AddListener(() => Swapper(cubeTransparent));
-        buttons[1].onClick.AddListener(() => Swapper(sphereTransparent));
-        buttons[2].onClick.AddListener(() => Swapper(capsuleTransparent));
+        buttons[0].onClick.AddListener(() => Swapper(gos[0]));
+        buttons[1].onClick.AddListener(() => Swapper(gos[1]));
+        buttons[2].onClick.AddListener(() => Swapper(gos[2]));
     }
 
     private void Swapper(GameObject go)

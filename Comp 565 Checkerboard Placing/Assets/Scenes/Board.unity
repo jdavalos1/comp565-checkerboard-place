@@ -211,10 +211,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a963b6e541eb0384aa4ae1185e0dfb92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gos:
+  - {fileID: 789025078}
+  - {fileID: 1226806741}
+  - {fileID: 2011027957}
   buttons:
   - {fileID: 280674729}
   - {fileID: 1182513902}
   - {fileID: 889420414}
+  mats:
+  - {fileID: 2100000, guid: e671db2550a3a9541ae90ec5934ac3da, type: 2}
+  - {fileID: 2100000, guid: 6e18e5d42557df447856e1933307e228, type: 2}
+  - {fileID: 2100000, guid: 1bcaecc7b83f0dd4890d3835fb49ad8e, type: 2}
 --- !u!1 &111427623
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,18 +303,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 111427626}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &111427626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -652,9 +649,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b553abcbcbf848468d784c6a343248b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubeTransparent: {fileID: 789025078}
-  sphereTransparent: {fileID: 1226806741}
-  capsuleTransparent: {fileID: 2011027957}
+  gos:
+  - {fileID: 789025078}
+  - {fileID: 1226806741}
+  - {fileID: 2011027957}
   buttons:
   - {fileID: 111427625}
   - {fileID: 1618760127}
@@ -671,6 +669,7 @@ GameObject:
   - component: {fileID: 789025080}
   - component: {fileID: 789025079}
   - component: {fileID: 789025082}
+  - component: {fileID: 789025083}
   m_Layer: 0
   m_Name: TransparentCube
   m_TagString: Cube
@@ -751,6 +750,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06dd3e0998dd2ae4ba7fd170ba62f730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &789025083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789025078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64202fa7b35e4e4bb94600b5e17394a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3
 --- !u!1 &822382343
 GameObject:
   m_ObjectHideFlags: 0
@@ -1221,6 +1233,7 @@ GameObject:
   - component: {fileID: 1226806743}
   - component: {fileID: 1226806742}
   - component: {fileID: 1226806745}
+  - component: {fileID: 1226806746}
   m_Layer: 0
   m_Name: TransparentSphere
   m_TagString: Sphere
@@ -1301,6 +1314,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06dd3e0998dd2ae4ba7fd170ba62f730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1226806746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226806741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64202fa7b35e4e4bb94600b5e17394a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
 --- !u!1 &1313439511
 GameObject:
   m_ObjectHideFlags: 0
@@ -1710,6 +1736,7 @@ GameObject:
   - component: {fileID: 2011027959}
   - component: {fileID: 2011027958}
   - component: {fileID: 2011027961}
+  - component: {fileID: 2011027962}
   m_Layer: 0
   m_Name: TransparentCapsule
   m_TagString: Capsule
@@ -1790,6 +1817,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06dd3e0998dd2ae4ba7fd170ba62f730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2011027962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011027957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64202fa7b35e4e4bb94600b5e17394a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
 --- !u!1 &2115038602
 GameObject:
   m_ObjectHideFlags: 0
