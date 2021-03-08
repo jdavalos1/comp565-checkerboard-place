@@ -19,7 +19,21 @@ public class HandleTextures : MonoBehaviour
         buttons[1].onClick.AddListener(() => Swapper(1));
         buttons[2].onClick.AddListener(() => Swapper(2));
     }
-    
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Swapper(0);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            Swapper(1);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            Swapper(2);
+        }
+    }
     // Swap all materials
     void Swapper(int index)
     {

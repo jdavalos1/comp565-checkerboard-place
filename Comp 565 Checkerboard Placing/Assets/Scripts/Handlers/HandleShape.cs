@@ -25,12 +25,28 @@ public class HandleShape : MonoBehaviour
         gos[2].SetActive(false);
 
         // Set listeners when swap buttons detected
-        buttons[0].onClick.AddListener(() => Swapper(gos[0]));
-        buttons[1].onClick.AddListener(() => Swapper(gos[1]));
-        buttons[2].onClick.AddListener(() => Swapper(gos[2]));
+        buttons[0].onClick.AddListener(() => Swapper(0));
+        buttons[1].onClick.AddListener(() => Swapper(1));
+        buttons[2].onClick.AddListener(() => Swapper(2));
     }
 
-    private void Swapper(GameObject go)
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Swapper(0);
+        }
+        else if (Input.GetKeyDown(KeyCode.W))
+        {
+            Swapper(1);
+        }
+        else if (Input.GetKeyDown(KeyCode.E))
+        {
+            Swapper(2);
+        }
+    }
+
+    private void Swapper(int index)
     {
         // Obtain last position of the transparent
         var lastPos = transparent.transform.position;
@@ -40,7 +56,7 @@ public class HandleShape : MonoBehaviour
         transparent.transform.position = hiddenPosition;
         
         // New transparent set w/last pos
-        transparent = go;
+        transparent = gos[index];
         transparent.SetActive(true);
         transparent.transform.position = lastPos;
     }
