@@ -30,10 +30,6 @@ public class Platform : MonoBehaviour
 
                 var userShape = CreateClone();
 
-                //cube.GetComponent<BoxCollider>().isTrigger = true;
-                //cube.GetComponent<Renderer>().material = blockMaterial;
-
-                //cube.transform.position = new Vector3(hitInfo.point.x, hitInfo.point.y + 0.5f, hitInfo.point.z);
                 if (hitInfo.transform.CompareTag("Base"))
                 {
                     userShape.transform.position = new Vector3(hitInfo.point.x, hitInfo.point.y + (0.5f), hitInfo.point.z);
