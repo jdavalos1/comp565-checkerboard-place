@@ -6,10 +6,6 @@ TagManager:
   tags:
   - Base
   - UserShape
-  - Transparent
-  - Cube
-  - Sphere
-  - Capsule
   layers:
   - Default
   - TransparentFX
